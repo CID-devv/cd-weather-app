@@ -21,7 +21,7 @@ function dateAndTime() {
   }
 }
 
-dateAndTime();
+// dateAndTime();
 
 // Feature 2
 let search = document.querySelector("#form");
