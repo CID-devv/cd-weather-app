@@ -21,13 +21,13 @@
 }
 
 .temperature strong {
-  font-size: 64px;line-height: 1;
+  font-size: 55px;line-height: 1;
   font-weight: 300;
 }
 
 .temperature .units {
   position: relative;
-  top: -34px;
+  top: -30px;
 }
 
 .temperature .units a {
