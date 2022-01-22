@@ -1,0 +1,57 @@
+.wrapper {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.main {
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+}
+
+.overview {
+  margin-bottom: 20px;
+}
+
+.temperature img{
+  margin-bottom: 30px;
+  margin-right: 5px;
+  width: 64px;
+  height: 64px;
+}
+
+.temperature strong {
+  font-size: 64px;line-height: 1;
+  font-weight: 300;
+}
+
+.temperature .units {
+  position: relative;
+  top: -34px;
+}
+
+.temperature .units a {
+  text-decoration: none;
+  color: #000000;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color: #878787;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  line-height: 19px;
+}
+
+
