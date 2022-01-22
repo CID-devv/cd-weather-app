@@ -20,17 +20,19 @@ function dateAndTime() {
   return `${day} ${hour}`;
 }
 
-// // Feature 2
-// let search = document.querySelector("#form");
-// let locationInput = document.querySelector("#location-input");
-// let title = document.querySelector(".title");
+function search(city) {
+  let apiKey = "f4d989e0a37469e143375a913c800d40";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-// function cityName(event) {
-//   event.preventDefault();
-//   title.innerHTML = locationInput.value;
-//   title.toUpperCase().replace().trim();
-// }
-// search.addEventListener("submit", cityName);
+function cityName(event) {
+  event.preventDefault();
+  let cityInputEl = document.querySelector("#city-input");
+  search(cityInputEl.value); 
+}
+
+search("New York");
 
 // // Feature 3
 // let temp = document.querySelector("#temp");
@@ -67,9 +69,6 @@ function displayTemperature(response) {
   iconEl.setAttribute("src", ` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconEl.setAttribute("alt", response.data.weather[0].description);
 }
-let city = "New York";
-let apiKey = "f4d989e0a37469e143375a913c800d40";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-
-axios.get(apiUrl).then(displayTemperature);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", cityName);
