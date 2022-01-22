@@ -52,6 +52,9 @@ li {
   margin: 0;
   padding: 0;
   line-height: 19px;
+}
+
+li::first-letter {
   text-transform: capitalize;
 }
 

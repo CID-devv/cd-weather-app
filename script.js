@@ -1,27 +1,25 @@
-// // Feature 1
-// let h2 = document.querySelector(".sub-title");
-// let date = new Date();
-// let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-// let day = days[date.getDay()];
-// let hour = date.getHours();
-// let minutes = date.getMinutes();
-// let seconds = date.getSeconds();
+function dateAndTime() {
+  let li = document.getElementById('date');
+  let date = new Date();
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
 
-// function dateAndTime() {
-//   if (hour < 10) {
-//     hour = `0${hour}`;
-//   }
-//   if (hour < 12) {
-//     h2.innerHTML = `${day}, ${hour}:${minutes} AM EST`;
-//   } else {
-//     h2.innerHTML = `${day}, ${hour}:${minutes} PM EST`;
-//   }
-//   if (minutes < 10) {
-//     minutes = `0 ${minutes}`;
-//   }
-// }
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  if (hour < 12) {
+    hour = `${hour}:${minutes} AM EST`;
+  } else {
+    hour = `${hour}:${minutes} PM EST`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-// // dateAndTime();
+  return `${day} ${hour}`;
+}
 
 // // Feature 2
 // let search = document.querySelector("#form");
@@ -63,7 +61,9 @@ function displayTemperature(response) {
   let humidityEl = document.getElementById("humidity");
   humidityEl.innerHTML = response.data.main.humidity;
   let windEl = document.getElementById("wind");
-  windEl.innerHTML = Math.round(response.data.wind.speed)
+  windEl.innerHTML = Math.round(response.data.wind.speed);
+  let dateEl = document.getElementById("date");
+  dateEl.innerHTML = dateAndTime(response.data.dt * 1000);
 }
 
 let apiKey = "f4d989e0a37469e143375a913c800d40";
